@@ -5,125 +5,179 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Preethi Varsha Marivina</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .collapsible-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .collapsible-content.open {
+      max-height: 1000px;
+      padding-top: 1rem;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-100 text-gray-800 font-sans leading-relaxed">
+
   <!-- Header -->
-  <header class="text-center py-10 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
-    <h1 class="text-4xl font-bold">Hi, I'm Preethi Varsha Marivina 👋</h1>
-    <p class="mt-2 text-lg">Software Engineer • Full-Stack Developer • AI/ML Enthusiast</p>
-    <p class="mt-1">Building scalable, secure, and efficient software. I love clean architecture, data-driven decisions, and optimization.</p>
-    <div class="mt-4 flex justify-center gap-4">
-      <a href="mailto:mpreethivarsha@gmail.com" class="bg-white text-red-600 px-4 py-2 rounded-lg font-semibold">Email</a>
-      <a href="https://www.linkedin.com/in/preethi-varsha-marivina/" target="_blank" class="bg-white text-blue-700 px-4 py-2 rounded-lg font-semibold">LinkedIn</a>
-      <a href="https://github.com/PreethiVarshaM" target="_blank" class="bg-white text-gray-900 px-4 py-2 rounded-lg font-semibold">GitHub</a>
+  <header class="text-center py-12 bg-gradient-to-r from-slate-600 via-gray-700 to-slate-900 text-white shadow-lg">
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Preethi Varsha Marivina</h1>
+    <p class="mt-4 text-lg md:text-xl text-gray-200">Software Engineer • Full-Stack Developer • AI/ML </p>
+    <p class="mt-1 text-gray-300 max-w-2xl mx-auto">
+      I build scalable, secure, and efficient software with a focus on clean architecture, optimization, and impactful solutions.
+    </p>
+
+    <!-- Recruiter Buttons -->
+    <div class="mt-6 flex flex-wrap justify-center gap-4">
+      <a href="mailto:mpreethivarsha@gmail.com" class="px-5 py-2 rounded-full font-medium bg-white text-slate-700 hover:bg-gray-100 shadow transition">📧 Email</a>
+      <a href="https://www.linkedin.com/in/preethi-varsha-marivina/" target="_blank" class="px-5 py-2 rounded-full font-medium bg-white text-blue-700 hover:bg-gray-100 shadow transition">💼 LinkedIn</a>
+      <a href="https://github.com/PreethiVarshaM" target="_blank" class="px-5 py-2 rounded-full font-medium bg-white text-gray-900 hover:bg-gray-100 shadow transition">💻 GitHub</a>
+      <a href="Preethi_Resume.pdf" target="_blank" class="px-5 py-2 rounded-full font-medium bg-emerald-600 text-white hover:bg-emerald-700 shadow transition">📄 Download Resume</a>
+    </div>
+
+    <!-- Expand/Collapse All -->
+    <div class="mt-8">
+      <button id="toggleAll" class="px-6 py-2 rounded-full font-semibold bg-white text-slate-700 shadow hover:bg-gray-100 transition">
+        Expand All
+      </button>
     </div>
   </header>
 
-  <!-- About Me -->
-  <section class="max-w-4xl mx-auto py-12 px-6">
-    <h2 class="text-2xl font-bold mb-4">🚀 About Me</h2>
-    <p>
-      Full-stack developer with 1+ years of experience. Passionate about scalable and secure solutions, AI/ML, and optimization. 
-      Currently a Software Engineer I at <b>BNY</b>, with past experience as a Development Intern at <b>Tech Mahindra</b>. 
-    </p>
-  </section>
-
-  <!-- Education -->
-  <section class="bg-gray-100 py-12 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold mb-4">🎓 Education</h2>
-      <p><b>Indian Institute of Technology Tirupati</b>, B.Tech in Computer Science & Engineering</p>
-      <p>Nov 2020 – May 2024 | GPA: 8.49/10</p>
+  <!-- Key Skills Always Visible -->
+  <section class="max-w-4xl mx-auto py-8 px-6">
+    <h2 class="text-xl font-bold text-slate-700 border-l-4 border-slate-500 pl-3 mb-4">⭐ Core Skills</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-700 text-sm">
+      <div class="bg-white p-4 rounded-xl shadow">Java, Python, JavaScript, C++</div>
+      <div class="bg-white p-4 rounded-xl shadow">React, Angular, Spring Boot</div>
+      <div class="bg-white p-4 rounded-xl shadow">Node.js, Express.js</div>
+      <div class="bg-white p-4 rounded-xl shadow">Oracle, MySQL, MongoDB</div>
+      <div class="bg-white p-4 rounded-xl shadow">Git, Docker, CI/CD</div>
+      <div class="bg-white p-4 rounded-xl shadow">AI/ML, Data Analytics</div>
     </div>
   </section>
 
-  <!-- Experience -->
-  <section class="max-w-4xl mx-auto py-12 px-6">
-    <h2 class="text-2xl font-bold mb-4">💼 Experience</h2>
-    <div class="space-y-6">
+  <!-- Collapsible Sections -->
+  <section class="max-w-4xl mx-auto py-4 px-6">
+    <button class="w-full flex justify-between items-center text-left text-lg font-semibold text-slate-700 border-b pb-2 collapsible">
+      💼 Experience <span class="text-gray-500">+</span>
+    </button>
+    <div class="collapsible-content text-gray-700 space-y-4">
       <div>
-        <h3 class="font-semibold">Software Engineer I @ Bank of New York (BNY)</h3>
-        <p class="text-sm text-gray-600">Jul 2024 – Present · Chennai, India</p>
-        <ul class="list-disc ml-6 mt-2 space-y-1">
-          <li>Developed REST APIs & microservices (Java/Spring Boot) with authentication & caching.</li>
-          <li>Improved Oracle SQL query performance by 30%, optimized Linux batch jobs by 10%.</li>
-          <li>Achieved 80% test coverage, reduced Java tech debt by 50%.</li>
-          <li>Streamlined CI/CD with GitLab multi-service deployments (50% less manual effort).</li>
+        <h3 class="font-semibold">Software Engineer I — Bank of New York (BNY)</h3>
+        <p class="text-sm text-gray-500">Jul 2024 – Present | Chennai, India</p>
+        <ul class="list-disc ml-6 space-y-1 text-sm">
+          <li>Developed and optimized REST APIs/microservices (Java, Spring Boot, Angular, Oracle).</li>
+          <li>Improved Oracle SQL queries (30%) & Linux batch jobs (10%).</li>
+          <li>80% test coverage across 6+ projects, cut technical debt by 50%.</li>
+          <li>Led GitLab CI/CD multi-service deployments → 50% faster rollouts.</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-semibold">Development Intern @ Tech Mahindra</h3>
-        <p class="text-sm text-gray-600">May 2023 – Jul 2023 · Hyderabad (Remote)</p>
-        <ul class="list-disc ml-6 mt-2 space-y-1">
-          <li>Built an end-to-end analytics app (React, JS, MySQL) replacing Excel workflows.</li>
-          <li>Integrated Azure Synapse & Power BI for analytics and visualization.</li>
-          <li>Prototyped ML model for Excel ingestion & automated insights for 1000+ records.</li>
+        <h3 class="font-semibold">Development Intern — Tech Mahindra</h3>
+        <p class="text-sm text-gray-500">May 2023 – Jul 2023 | Hyderabad (Remote)</p>
+        <ul class="list-disc ml-6 space-y-1 text-sm">
+          <li>Built analytics app (React, MySQL) → replaced Excel workflows, 70% faster.</li>
+          <li>Integrated Azure Synapse & Power BI for analytics.</li>
+          <li>Prototyped ML model to process Excel data (1000+ records).</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section class="bg-gray-100 py-12 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold mb-4">📂 Projects</h2>
-      <ul class="list-disc ml-6 space-y-2">
-        <li><b>UI Energy Analysis Tool</b> — Measured energy usage of React UI components <a href="https://github.com/UI-Energy-Smells" class="text-blue-600">GitHub</a></li>
-        <li><b>Tirutsava Website</b> — Designed & developed fest website using MERN + Figma</li>
-        <li><b>Ocean Rescue (Android Game)</b> — Educational game teaching UN SDGs 6 & 14 <a href="https://github.com/PreethiVarshaM/OceanRescue" class="text-blue-600">GitHub</a></li>
-        <li><b>Dragonfly Simulator</b> — RISC-V pipeline simulator with web visualization <a href="https://github.com/S1ddh4rthaG/Dragonfly" class="text-blue-600">GitHub</a></li>
-        <li><b>Dhwani Sarathi</b> — App-based audiometer, Smart India Hackathon Winner <a href="https://github.com/S1ddh4rthaG/DhwaniSarathi" class="text-blue-600">GitHub</a></li>
+  <section class="max-w-4xl mx-auto py-4 px-6">
+    <button class="w-full flex justify-between items-center text-left text-lg font-semibold text-slate-700 border-b pb-2 collapsible">
+      📂 Projects <span class="text-gray-500">+</span>
+    </button>
+    <div class="collapsible-content text-gray-700">
+      <ul class="list-disc ml-6 space-y-2 text-sm">
+        <li><b>UI Energy Analysis Tool</b> — measured React UI energy usage <a href="https://github.com/UI-Energy-Smells" class="underline text-slate-600">GitHub</a></li>
+        <li><b>Tirutsava Website</b> — Fest website built with MERN + Figma</li>
+        <li><b>Ocean Rescue</b> — Android game on UN SDGs <a href="https://github.com/PreethiVarshaM/OceanRescue" class="underline text-slate-600">GitHub</a></li>
+        <li><b>Dragonfly Simulator</b> — RISC-V pipeline simulator <a href="https://github.com/S1ddh4rthaG/Dragonfly" class="underline text-slate-600">GitHub</a></li>
+        <li><b>Dhwani Sarathi</b> — Smart India Hackathon Winning App <a href="https://github.com/S1ddh4rthaG/DhwaniSarathi" class="underline text-slate-600">GitHub</a></li>
       </ul>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section class="max-w-4xl mx-auto py-12 px-6">
-    <h2 class="text-2xl font-bold mb-4">🧰 Skills</h2>
-    <p><b>Languages:</b> Java, JavaScript, Python, C++, SQL</p>
-    <p><b>Frameworks:</b> React, Angular, Spring Boot, Node.js, Express.js</p>
-    <p><b>Databases:</b> Oracle, MySQL, MongoDB</p>
-    <p><b>Tools:</b> Git, Linux, GitLab CI/CD, Docker, Power BI, Synapse, Figma</p>
-    <p><b>Core:</b> REST APIs, Microservices, DSA, Database Design</p>
-  </section>
-
-  <!-- Achievements -->
-  <section class="bg-gray-100 py-12 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold mb-4">🏆 Achievements</h2>
-      <ul class="list-disc ml-6 space-y-2">
-        <li><b>Smart India Hackathon 2023 – Winner</b> (Dhwani Sarathi: App-Based Audiometer)</li>
-        <li><b>NPTEL Blockchain and its Applications</b> — Top 1% Nationwide</li>
+  <section class="max-w-4xl mx-auto py-4 px-6">
+    <button class="w-full flex justify-between items-center text-left text-lg font-semibold text-slate-700 border-b pb-2 collapsible">
+      🎓 Education & Certifications <span class="text-gray-500">+</span>
+    </button>
+    <div class="collapsible-content text-gray-700 text-sm space-y-4">
+      <div>
+        <p class="font-semibold">Indian Institute of Technology Tirupati</p>
+        <p>B.Tech in Computer Science & Engineering (2020 – 2024) | GPA: 8.49/10</p>
+      </div>
+      <ul class="list-disc ml-6 space-y-1">
+        <li>Blockchain and its Applications — NPTEL (2023)</li>
+        <li>Data Structures & Algorithms — Coursera (2023)</li>
+        <li>NLP — NPTEL (2022)</li>
+        <li>Web Development Bootcamp — Udemy (2022)</li>
       </ul>
     </div>
   </section>
 
-  <!-- Certifications -->
-  <section class="max-w-4xl mx-auto py-12 px-6">
-    <h2 class="text-2xl font-bold mb-4">🎓 Certifications</h2>
-    <ul class="list-disc ml-6 space-y-2">
-      <li>Blockchain and its Applications — NPTEL (2023)</li>
-      <li>Data Structures & Algorithms — Coursera (2023)</li>
-      <li>Natural Language Processing — NPTEL (2022)</li>
-      <li>Web Development Bootcamp — Udemy (2022)</li>
-      <li>Google Analytics — Coursera (2023)</li>
-      <li>BigQuery Fundamentals — Coursera (2023)</li>
-    </ul>
+  <section class="max-w-4xl mx-auto py-4 px-6">
+    <button class="w-full flex justify-between items-center text-left text-lg font-semibold text-slate-700 border-b pb-2 collapsible">
+      🏆 Achievements <span class="text-gray-500">+</span>
+    </button>
+    <div class="collapsible-content text-gray-700 text-sm">
+      <ul class="list-disc ml-6 space-y-2">
+        <li>🏅 Smart India Hackathon 2023 Winner — App-Based Audiometer</li>
+        <li>🏅 Ranked Top 1% Nationwide in NPTEL Blockchain (2023)</li>
+      </ul>
+    </div>
   </section>
 
   <!-- Contact -->
-  <section class="bg-gray-800 text-white py-12 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-2xl font-bold mb-4">📬 Get In Touch</h2>
+<section class="bg-slate-800 text-gray-100 py-12 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="flex justify-center gap-24">
+        <h2 class="text-xl font-bold mb-4">📬 Quick Contact : </h2>
       <p>📧 <a href="mailto:mpreethivarsha@gmail.com" class="underline">mpreethivarsha@gmail.com</a></p>
-      <p>💼 <a href="https://www.linkedin.com/in/preethi-varsha-marivina/" class="underline">LinkedIn Profile</a></p>
-      <p>💻 <a href="https://github.com/PreethiVarshaM" class="underline">GitHub Profile</a></p>
+      <p>💼 <a href="https://www.linkedin.com/in/preethi-varsha-marivina/" class="underline">LinkedIn</a></p>
+      <p>💻 <a href="https://github.com/PreethiVarshaM" class="underline">GitHub</a></p>
     </div>
-  </section>
+  </div>
+</section>
+
+
 
   <!-- Footer -->
-  <footer class="text-center py-6 bg-gray-900 text-gray-400">
-    ⭐ Thanks for stopping by! If you like my work, consider starring my repos.
+  <footer class="text-center py-6 bg-slate-900 text-gray-400 text-sm">
+    ⭐ Thanks for visiting! Looking forward to impactful opportunities.
   </footer>
+
+  <script>
+    const buttons = document.querySelectorAll(".collapsible");
+    const toggleAllBtn = document.getElementById("toggleAll");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const content = button.nextElementSibling;
+        content.classList.toggle("open");
+        const icon = button.querySelector("span");
+        icon.textContent = content.classList.contains("open") ? "–" : "+";
+      });
+    });
+
+    toggleAllBtn.addEventListener("click", () => {
+      const allOpen = [...document.querySelectorAll(".collapsible-content")]
+        .every(c => c.classList.contains("open"));
+      
+      document.querySelectorAll(".collapsible-content").forEach((c, i) => {
+        const icon = buttons[i].querySelector("span");
+        if (allOpen) {
+          c.classList.remove("open");
+          icon.textContent = "+";
+        } else {
+          c.classList.add("open");
+          icon.textContent = "–";
+        }
+      });
+      
+      toggleAllBtn.textContent = allOpen ? "Expand All" : "Collapse All";
+    });
+  </script>
 </body>
 </html>
