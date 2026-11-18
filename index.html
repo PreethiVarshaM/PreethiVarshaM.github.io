@@ -1,183 +1,198 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Preethi Varsha Marivina</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Preethi Varsha Marivina is a software engineer building reliable, thoughtful software and practical digital products.">
+  <title>Preethi Varsha Marivina — Software Engineer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <style>
-    .collapsible-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s ease;
-    }
-    .collapsible-content.open {
-      max-height: 1000px;
-      padding-top: 1rem;
-    }
+    :root { --night:#0b1220; --night-2:#111c31; --leaf:#a8c8ff; --mint:#e5efff; --paper:#f6f8fc; --ink:#172033; --muted:#68758b; --line:#e1e7f0; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:84px; }
+    body { background:var(--paper); color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    a { text-decoration:none; }
+    .navbar { --bs-navbar-color:rgba(255,255,255,.72); --bs-navbar-hover-color:#fff; background:rgba(11,18,32,.92); backdrop-filter:blur(16px); }
+    .navbar-brand { color:#fff!important; font-weight:650; font-size:.92rem; letter-spacing:-.025em; }
+    .navbar .nav-link { font-size:.82rem; padding-inline:.9rem!important; }
+    .nav-cta { color:var(--night)!important; background:var(--leaf); border-radius:999px; padding:.55rem 1rem!important; font-weight:650; }
+    .hero { min-height:690px; display:flex; align-items:center; overflow:hidden; position:relative; color:#fff; background:radial-gradient(ellipse at 78% 42%,#203e70 0,transparent 36%),linear-gradient(120deg,var(--night) 4%,#111c31 64%,#162847); }
+    .hero::before,.hero::after { content:""; position:absolute; border:1px solid rgba(229,239,255,.14); border-radius:50%; width:540px;height:540px;right:-120px;top:50%;transform:translateY(-50%); animation:orbit 28s linear infinite; }
+    .hero::after { width:720px;height:720px;right:-210px;border-color:rgba(229,239,255,.08);animation-duration:42s;animation-direction:reverse; }
+    @keyframes orbit { to { transform:translateY(-50%) rotate(360deg); } }
+    .hero-content { position:relative; z-index:1; padding-block:100px; }
+    .portrait-wrap { position:relative; width:min(100%,370px); margin:0 auto; padding:9px; border:1px solid rgba(229,239,255,.3); border-radius:48% 48% 12px 12px; background:rgba(255,255,255,.055); box-shadow:0 25px 80px rgba(0,0,0,.24); transform:rotate(2deg); }
+    .portrait { display:block; width:100%; height:440px; object-fit:cover; object-position:center 40%; border-radius:48% 48% 7px 7px; }
+    .portrait-caption { position:absolute; right:-16px; bottom:24px; padding:10px 14px; border:1px solid rgba(255,255,255,.18); border-radius:6px; background:rgba(11,18,32,.88); color:#fff; font-size:.72rem; transform:rotate(-2deg); backdrop-filter:blur(10px); }
+    .hero-kicker,.eyebrow { color:var(--leaf); text-transform:uppercase; letter-spacing:.17em; font-size:.68rem; font-weight:700; }
+    .hero h1 { max-width:850px; font:400 clamp(3.4rem,8vw,7.2rem)/.99 Georgia,"Times New Roman",serif; letter-spacing:-.055em; }
+    .hero h1 em { color:var(--leaf); font-weight:400; }
+    .hero-copy { max-width:580px; color:rgba(255,255,255,.72); font-size:1.08rem; line-height:1.8; }
+    .btn-blue { --bs-btn-color:var(--night); --bs-btn-bg:var(--leaf); --bs-btn-border-color:var(--leaf); --bs-btn-hover-color:var(--night); --bs-btn-hover-bg:#c4d9ff; --bs-btn-hover-border-color:#c4d9ff; font-weight:650; }
+    .btn-outline-light { --bs-btn-hover-color:var(--night); }
+    .availability { color:rgba(255,255,255,.65); font-size:.78rem; }
+    .availability::before { content:""; width:8px;height:8px;display:inline-block;margin-right:.55rem;border-radius:50%;background:#8fb8ff;box-shadow:0 0 0 5px rgba(143,184,255,.13); }
+    .scroll-cue { position:absolute; right:max(24px,calc((100vw - 1140px)/2)); bottom:35px; color:rgba(255,255,255,.6); writing-mode:vertical-rl; font-size:.68rem; letter-spacing:.12em; }
+    .section-space { padding-block:100px; }
+    .section-kicker { color:#315da8; text-transform:uppercase; font-size:.67rem; letter-spacing:.17em; font-weight:700; }
+    .section-title { font:400 clamp(2.3rem,5vw,4rem)/1.08 Georgia,"Times New Roman",serif; letter-spacing:-.045em; }
+    .section-lead { color:var(--muted); max-width:570px; }
+    .stats-band { background:#eaf0fa; border-block:1px solid #dce5f3; }
+    .stat { padding:27px 0; }
+    .stat strong { display:block; font:400 2.1rem Georgia,serif; color:#244a88; }
+    .stat span { color:var(--muted); font-size:.72rem; }
+    .experience-accordion { --bs-accordion-bg:transparent; --bs-accordion-border-color:var(--line); --bs-accordion-btn-bg:transparent; --bs-accordion-active-bg:#edf2fb; --bs-accordion-active-color:var(--ink); --bs-accordion-btn-focus-box-shadow:none; }
+    .accordion-button { padding:1.35rem 1.1rem; }
+    .accordion-button:not(.collapsed) { box-shadow:none; }
+    .accordion-button::after { background-size:1rem; }
+    .job-title { font-weight:650; font-size:1rem; }
+    .company-name { color:#315da8; }
+    .job-meta { color:var(--muted); font-size:.76rem; }
+    .job-body { color:#59647a; font-size:.87rem; }
+    .job-body li { margin-bottom:.5rem; }
+    .project-toolbar { gap:.5rem; }
+    .filter-btn { --bs-btn-color:#536178; --bs-btn-border-color:#d6deeb; --bs-btn-hover-bg:#e8eef8; --bs-btn-hover-color:var(--ink); --bs-btn-hover-border-color:#c6d2e5; font-size:.77rem; }
+    .filter-btn.active { color:#fff; background:#244a88; border-color:#244a88; }
+    .project-card { height:100%; border:1px solid var(--line); border-radius:10px; background:#fff; transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease; }
+    .project-card:hover { transform:translateY(-6px); border-color:#c5d3e8; box-shadow:0 18px 40px rgba(26,48,82,.09); }
+    .project-card .card-body { padding:1.5rem; }
+    .project-number { color:#8d9bb2; font:1rem Georgia,serif; }
+    .project-card .card-title { font-size:1.12rem; font-weight:650; letter-spacing:-.025em; }
+    .project-card .card-text { color:var(--muted); font-size:.86rem; min-height:4.2em; }
+    .tech-badge { color:#3f5881; background:#eaf0fa; font-weight:500; }
+    .project-link { color:#315da8; font-size:.78rem; font-weight:650; }
+    .project-card[hidden] { display:none!important; }
+    .about-panel { height:100%; padding:2rem; border-radius:12px; background:white; border:1px solid var(--line); }
+    .skill-pill { color:#3e567e; background:#edf2fa; border:1px solid #e0e8f4; font-size:.75rem; font-weight:500; padding:.55rem .8rem; }
+    .education-line { border-top:1px solid var(--line); padding:1rem 0; }
+    .education-line strong { font-size:.87rem; }
+    .education-line p { margin:0; color:var(--muted); font-size:.77rem; }
+    .award { padding:1rem; border-radius:8px; background:#edf2fa; color:#334e79; font-size:.78rem; }
+    .contact-section { background:var(--night); color:white; overflow:hidden; position:relative; }
+    .contact-section::after { content:""; position:absolute; width:390px;height:390px;border-radius:50%;background:rgba(78,127,207,.18);filter:blur(3px);right:-140px;bottom:-230px; }
+    .contact-inner { position:relative; z-index:1; }
+    .contact-section .section-title { max-width:700px; }
+    .contact-section p { color:rgba(255,255,255,.67); }
+    .contact-link { color:var(--leaf); font-size:.85rem; }
+    footer { background:#070d18; color:rgba(255,255,255,.48); font-size:.7rem; }
+    .reveal { opacity:0; transform:translateY(20px); transition:opacity .65s ease,transform .65s ease; }
+    .reveal.is-visible { opacity:1; transform:translateY(0); }
+    @media(max-width:767.98px) { .hero{min-height:650px}.hero-content{padding-block:90px}.portrait-wrap{width:min(78%,300px);margin:30px auto 0}.portrait{height:350px}.portrait-caption{right:-12px}.section-space{padding-block:72px}.scroll-cue{display:none}.project-card .card-text{min-height:0} }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none} }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans leading-relaxed">
-
-  <!-- Header -->
-  <header class="text-center py-12 bg-gradient-to-r from-slate-600 via-gray-700 to-slate-900 text-white shadow-lg">
-    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Preethi Varsha Marivina</h1>
-    <p class="mt-4 text-lg md:text-xl text-gray-200">Software Engineer • Full-Stack Developer • AI/ML </p>
-    <p class="mt-1 text-gray-300 max-w-2xl mx-auto">
-      I build scalable, secure, and efficient software with a focus on clean architecture, optimization, and impactful solutions.
-    </p>
-
-    <!-- Recruiter Buttons -->
-    <div class="mt-6 flex flex-wrap justify-center gap-4">
-      <a href="mailto:mpreethivarsha@gmail.com" class="px-5 py-2 rounded-full font-medium bg-white text-slate-700 hover:bg-gray-100 shadow transition">📧 Email</a>
-      <a href="https://www.linkedin.com/in/preethi-varsha-marivina/" target="_blank" class="px-5 py-2 rounded-full font-medium bg-white text-blue-700 hover:bg-gray-100 shadow transition">💼 LinkedIn</a>
-      <a href="https://github.com/PreethiVarshaM" target="_blank" class="px-5 py-2 rounded-full font-medium bg-white text-gray-900 hover:bg-gray-100 shadow transition">💻 GitHub</a>
-      <a href="Preethi_Resume.pdf" target="_blank" class="px-5 py-2 rounded-full font-medium bg-emerald-600 text-white hover:bg-emerald-700 shadow transition">📄 Download Resume</a>
-    </div>
-
-    <!-- Expand/Collapse All -->
-    <div class="mt-8">
-      <button id="toggleAll" class="px-6 py-2 rounded-full font-semibold bg-white text-slate-700 shadow hover:bg-gray-100 transition">
-        Expand All
-      </button>
-    </div>
-  </header>
-
-  <!-- Key Skills Always Visible -->
-  <section class="max-w-4xl mx-auto py-8 px-6">
-    <h2 class="text-xl font-bold text-slate-700 border-l-4 border-slate-500 pl-3 mb-4">⭐ Core Skills</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-700 text-sm">
-      <div class="bg-white p-4 rounded-xl shadow">Java, Python, JavaScript, C++</div>
-      <div class="bg-white p-4 rounded-xl shadow">React, Angular, Spring Boot</div>
-      <div class="bg-white p-4 rounded-xl shadow">Node.js, Express.js</div>
-      <div class="bg-white p-4 rounded-xl shadow">Oracle, MySQL, MongoDB</div>
-      <div class="bg-white p-4 rounded-xl shadow">Git, Docker, CI/CD</div>
-      <div class="bg-white p-4 rounded-xl shadow">AI/ML, Data Analytics</div>
-    </div>
-  </section>
-
-  <!-- Collapsible Sections -->
-  <section class="max-w-4xl mx-auto py-4 px-6">
-    <button class="w-full flex justify-between items-center text-left text-lg font-semibold text-slate-700 border-b pb-2 collapsible">
-      💼 Experience <span class="text-gray-500">+</span>
-    </button>
-    <div class="collapsible-content text-gray-700 space-y-4">
-      <div>
-        <h3 class="font-semibold">Software Engineer I — Bank of New York (BNY)</h3>
-        <p class="text-sm text-gray-500">Jul 2024 – Present | Chennai, India</p>
-        <ul class="list-disc ml-6 space-y-1 text-sm">
-          <li>Developed and optimized REST APIs/microservices (Java, Spring Boot, Angular, Oracle).</li>
-          <li>Improved Oracle SQL queries (30%) & Linux batch jobs (10%).</li>
-          <li>80% test coverage across 6+ projects, cut technical debt by 50%.</li>
-          <li>Led GitLab CI/CD multi-service deployments → 50% faster rollouts.</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-semibold">Development Intern — Tech Mahindra</h3>
-        <p class="text-sm text-gray-500">May 2023 – Jul 2023 | Hyderabad (Remote)</p>
-        <ul class="list-disc ml-6 space-y-1 text-sm">
-          <li>Built analytics app (React, MySQL) → replaced Excel workflows, 70% faster.</li>
-          <li>Integrated Azure Synapse & Power BI for analytics.</li>
-          <li>Prototyped ML model to process Excel data (1000+ records).</li>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-smooth-scroll="true" tabindex="0">
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Preethi Varsha <span class="fw-normal opacity-75">Marivina</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mt-3 mt-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#work">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item ms-lg-2"><a class="nav-link nav-cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a></li>
         </ul>
       </div>
     </div>
-  </section>
+  </nav>
 
-  <section class="max-w-4xl mx-auto py-4 px-6">
-    <button class="w-full flex justify-between items-center text-left text-lg font-semibold text-slate-700 border-b pb-2 collapsible">
-      📂 Projects <span class="text-gray-500">+</span>
-    </button>
-    <div class="collapsible-content text-gray-700">
-      <ul class="list-disc ml-6 space-y-2 text-sm">
-        <li><b>UI Energy Analysis Tool</b> — measured React UI energy usage <a href="https://github.com/UI-Energy-Smells" class="underline text-slate-600">GitHub</a></li>
-        <li><b>Tirutsava Website</b> — Fest website built with MERN + Figma</li>
-        <li><b>Ocean Rescue</b> — Android game on UN SDGs <a href="https://github.com/PreethiVarshaM/OceanRescue" class="underline text-slate-600">GitHub</a></li>
-        <li><b>Dragonfly Simulator</b> — RISC-V pipeline simulator <a href="https://github.com/S1ddh4rthaG/Dragonfly" class="underline text-slate-600">GitHub</a></li>
-        <li><b>Dhwani Sarathi</b> — Smart India Hackathon Winning App <a href="https://github.com/S1ddh4rthaG/DhwaniSarathi" class="underline text-slate-600">GitHub</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="max-w-4xl mx-auto py-4 px-6">
-    <button class="w-full flex justify-between items-center text-left text-lg font-semibold text-slate-700 border-b pb-2 collapsible">
-      🎓 Education & Certifications <span class="text-gray-500">+</span>
-    </button>
-    <div class="collapsible-content text-gray-700 text-sm space-y-4">
-      <div>
-        <p class="font-semibold">Indian Institute of Technology Tirupati</p>
-        <p>B.Tech in Computer Science & Engineering (2020 – 2024) | GPA: 8.49/10</p>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div class="row align-items-center g-5"><div class="col-lg-8 col-xl-8">
+          <p class="hero-kicker mb-4">Software engineer <span class="mx-2 opacity-50">/</span> Chennai, India</p>
+          <h1 class="mb-4">Thoughtful software.<br><em>Built to make a difference.</em></h1>
+          <p class="hero-copy mb-4">I’m Preethi, a software engineer who enjoys making complex systems feel simple. I build reliable products across the stack, with a focus on clean architecture, performance, and the people who use them.</p>
+          <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+            <a class="btn btn-blue rounded-pill px-4 py-3" href="mailto:mpreethivarsha@gmail.com">Start a conversation <span class="ms-2" aria-hidden="true">↗</span></a>
+            <a class="btn btn-outline-light rounded-pill px-4 py-3" href="https://github.com/PreethiVarshaM" target="_blank" rel="noreferrer">Explore my GitHub</a>
+          </div>
+          <div class="availability">Software Engineer I at BNY</div>
+        </div><div class="col-lg-4 col-xl-4"><figure class="portrait-wrap mb-0"><img class="portrait" src="assets/preethi-portrait.jpeg" alt="Preethi Varsha Marivina"><figcaption class="portrait-caption">Preethi Varsha · Software Engineer</figcaption></figure></div></div>
       </div>
-      <ul class="list-disc ml-6 space-y-1">
-        <li>Blockchain and its Applications — NPTEL (2023)</li>
-        <li>Data Structures & Algorithms — Coursera (2023)</li>
-        <li>NLP — NPTEL (2022)</li>
-        <li>Web Development Bootcamp — Udemy (2022)</li>
-      </ul>
-    </div>
-  </section>
+      <a class="scroll-cue" href="#experience">SCROLL TO EXPLORE ↓</a>
+    </section>
 
-  <section class="max-w-4xl mx-auto py-4 px-6">
-    <button class="w-full flex justify-between items-center text-left text-lg font-semibold text-slate-700 border-b pb-2 collapsible">
-      🏆 Achievements <span class="text-gray-500">+</span>
-    </button>
-    <div class="collapsible-content text-gray-700 text-sm">
-      <ul class="list-disc ml-6 space-y-2">
-        <li>🏅 Smart India Hackathon 2023 Winner — App-Based Audiometer</li>
-        <li>🏅 Ranked Top 1% Nationwide in NPTEL Blockchain (2023)</li>
-      </ul>
-    </div>
-  </section>
+    <section class="stats-band" aria-label="Career highlights"><div class="container"><div class="row text-center g-0">
+      <div class="col-4 stat"><strong>50%</strong><span>less technical debt</span></div>
+      <div class="col-4 stat border-start border-end"><strong>80%</strong><span>test coverage across 6+ projects</span></div>
+      <div class="col-4 stat"><strong>50%</strong><span>faster service rollouts</span></div>
+    </div></div></section>
 
-  <!-- Contact -->
-<section class="bg-slate-800 text-gray-100 py-12 px-6">
-  <div class="max-w-4xl mx-auto text-center">
-    <div class="flex justify-center gap-24">
-        <h2 class="text-xl font-bold mb-4">📬 Quick Contact : </h2>
-      <p>📧 <a href="mailto:mpreethivarsha@gmail.com" class="underline">mpreethivarsha@gmail.com</a></p>
-      <p>💼 <a href="https://www.linkedin.com/in/preethi-varsha-marivina/" class="underline">LinkedIn</a></p>
-      <p>💻 <a href="https://github.com/PreethiVarshaM" class="underline">GitHub</a></p>
-    </div>
-  </div>
-</section>
+    <section class="section-space" id="experience"><div class="container">
+      <div class="row align-items-end mb-5 reveal"><div class="col-lg-4"><p class="section-kicker mb-2">01 / Experience</p><h2 class="section-title mb-0">Good work is a team sport.</h2></div><div class="col-lg-6 ms-lg-auto mt-3 mt-lg-0"><p class="section-lead mb-0">I like solving problems that matter, learning from the people around me, and leaving systems better than I found them.</p></div></div>
+      <div class="accordion experience-accordion reveal" id="experienceAccordion">
+        <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#jobBny" aria-expanded="true" aria-controls="jobBny"><span class="flex-grow-1"><span class="job-title">Software Engineer I <span class="company-name">· BNY</span></span><span class="job-meta d-block mt-1">Chennai, India</span></span><span class="job-meta ms-3 me-3 d-none d-sm-inline">Jul 2024 — Present</span></button></h3><div id="jobBny" class="accordion-collapse collapse show" data-bs-parent="#experienceAccordion"><div class="accordion-body job-body"><ul class="mb-0"><li>Build and optimize REST APIs and microservices using Java, Spring Boot, Angular, and Oracle.</li><li>Improved Oracle query performance by 30% and Linux batch jobs by 10%.</li><li>Raised test coverage to 80% across six projects and reduced technical debt by 50%.</li><li>Helped lead multi-service GitLab CI/CD deployments, making rollouts 50% faster.</li></ul></div></div></div>
+        <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#jobTechM" aria-expanded="false" aria-controls="jobTechM"><span class="flex-grow-1"><span class="job-title">Development Intern <span class="company-name">· Tech Mahindra</span></span><span class="job-meta d-block mt-1">Hyderabad · Remote</span></span><span class="job-meta ms-3 me-3 d-none d-sm-inline">May — Jul 2023</span></button></h3><div id="jobTechM" class="accordion-collapse collapse" data-bs-parent="#experienceAccordion"><div class="accordion-body job-body"><ul class="mb-0"><li>Built a React and MySQL analytics app to replace manual Excel workflows, reducing turnaround time by 70%.</li><li>Connected Azure Synapse and Power BI for reporting, and prototyped an ML workflow for 1,000+ records.</li></ul></div></div></div>
+      </div>
+    </div></section>
 
+    <section class="section-space bg-white" id="work"><div class="container">
+      <div class="row align-items-end mb-4 reveal"><div class="col-lg-7"><p class="section-kicker mb-2">02 / Selected work</p><h2 class="section-title mb-2">Ideas, made tangible.</h2><p class="section-lead mb-0">A few things I’ve built with teams and on my own.</p></div><div class="col-lg-5 mt-4 mt-lg-0"><div class="project-toolbar d-flex flex-wrap justify-content-lg-end" role="group" aria-label="Filter projects"><button class="btn btn-sm rounded-pill filter-btn active" data-filter="all" aria-pressed="true">All work <span class="project-count">05</span></button><button class="btn btn-sm rounded-pill filter-btn" data-filter="web" aria-pressed="false">Web</button><button class="btn btn-sm rounded-pill filter-btn" data-filter="mobile" aria-pressed="false">Mobile</button><button class="btn btn-sm rounded-pill filter-btn" data-filter="systems" aria-pressed="false">Systems</button></div></div></div>
+      <div class="row g-3" id="projectGrid">
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="web"><article class="card project-card"><div class="card-body d-flex flex-column"><div class="d-flex justify-content-between mb-4"><span class="project-number">01</span><a class="project-link" href="https://github.com/UI-Energy-Smells" target="_blank" rel="noreferrer">View project ↗</a></div><h3 class="card-title">UI Energy Analysis Tool</h3><p class="card-text">Measure energy usage patterns in React interfaces and explore more efficient UI design.</p><div class="d-flex flex-wrap gap-2 mt-auto"><span class="badge rounded-pill tech-badge">React</span><span class="badge rounded-pill tech-badge">Energy analysis</span><span class="badge rounded-pill tech-badge">Research</span></div></div></article></div>
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="web"><article class="card project-card"><div class="card-body d-flex flex-column"><div class="d-flex justify-content-between mb-4"><span class="project-number">02</span><span class="project-link">MERN stack</span></div><h3 class="card-title">Tirutsava Website</h3><p class="card-text">A festival website bringing event information and the attendee experience together.</p><div class="d-flex flex-wrap gap-2 mt-auto"><span class="badge rounded-pill tech-badge">MongoDB</span><span class="badge rounded-pill tech-badge">Express</span><span class="badge rounded-pill tech-badge">React</span><span class="badge rounded-pill tech-badge">Figma</span></div></div></article></div>
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="mobile"><article class="card project-card"><div class="card-body d-flex flex-column"><div class="d-flex justify-content-between mb-4"><span class="project-number">03</span><a class="project-link" href="https://github.com/PreethiVarshaM/OceanRescue" target="_blank" rel="noreferrer">View project ↗</a></div><h3 class="card-title">Ocean Rescue</h3><p class="card-text">An Android game making ocean conservation and the UN Sustainable Development Goals interactive.</p><div class="d-flex flex-wrap gap-2 mt-auto"><span class="badge rounded-pill tech-badge">Android</span><span class="badge rounded-pill tech-badge">Game development</span><span class="badge rounded-pill tech-badge">UN SDGs</span></div></div></article></div>
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="systems"><article class="card project-card"><div class="card-body d-flex flex-column"><div class="d-flex justify-content-between mb-4"><span class="project-number">04</span><a class="project-link" href="https://github.com/S1ddh4rthaG/Dragonfly" target="_blank" rel="noreferrer">View project ↗</a></div><h3 class="card-title">Dragonfly Simulator</h3><p class="card-text">A RISC-V pipeline simulator for exploring processor architecture and instruction execution.</p><div class="d-flex flex-wrap gap-2 mt-auto"><span class="badge rounded-pill tech-badge">RISC-V</span><span class="badge rounded-pill tech-badge">Architecture</span></div></div></article></div>
+        <div class="col-md-6 col-lg-4 project-item reveal" data-category="mobile"><article class="card project-card"><div class="card-body d-flex flex-column"><div class="d-flex justify-content-between mb-4"><span class="project-number">05</span><a class="project-link" href="https://github.com/S1ddh4rthaG/DhwaniSarathi" target="_blank" rel="noreferrer">View project ↗</a></div><h3 class="card-title">Dhwani Sarathi</h3><p class="card-text">An accessible, app-based audiometer created with a team for the winning Smart India Hackathon solution.</p><div class="d-flex flex-wrap gap-2 mt-auto"><span class="badge rounded-pill tech-badge">Mobile app</span><span class="badge rounded-pill tech-badge">Accessibility</span><span class="badge rounded-pill tech-badge">SIH winner</span></div></div></article></div>
+      </div>
+      <p id="filterStatus" class="visually-hidden" aria-live="polite">Showing all 5 projects</p>
+    </div></section>
 
+    <section class="section-space" id="about"><div class="container"><div class="row g-4">
+      <div class="col-lg-6 reveal"><div class="about-panel"><p class="section-kicker mb-2">03 / Toolkit</p><h2 class="section-title fs-1 mb-4">Tools I work with.</h2><div class="d-flex flex-wrap gap-2"><span class="badge rounded-pill skill-pill">Java</span><span class="badge rounded-pill skill-pill">Python</span><span class="badge rounded-pill skill-pill">JavaScript</span><span class="badge rounded-pill skill-pill">C++</span><span class="badge rounded-pill skill-pill">React</span><span class="badge rounded-pill skill-pill">Angular</span><span class="badge rounded-pill skill-pill">Spring Boot</span><span class="badge rounded-pill skill-pill">Node.js</span><span class="badge rounded-pill skill-pill">Express</span><span class="badge rounded-pill skill-pill">Oracle</span><span class="badge rounded-pill skill-pill">MySQL</span><span class="badge rounded-pill skill-pill">MongoDB</span><span class="badge rounded-pill skill-pill">Git</span><span class="badge rounded-pill skill-pill">Docker</span><span class="badge rounded-pill skill-pill">CI/CD</span><span class="badge rounded-pill skill-pill">Linux</span><span class="badge rounded-pill skill-pill">AI/ML</span><span class="badge rounded-pill skill-pill">Data analytics</span></div></div></div>
+      <div class="col-lg-6 reveal"><div class="about-panel"><p class="section-kicker mb-2">04 / Education & recognition</p><h2 class="section-title fs-1 mb-4">Always learning.</h2><div class="education-line"><strong>Indian Institute of Technology Tirupati</strong><p>B.Tech, Computer Science & Engineering · 2020–2024</p><p>GPA 8.49 / 10</p></div><div class="education-line"><strong>Courses & certifications</strong><p>Blockchain and its Applications · NPTEL, 2023</p><p>Data Structures & Algorithms · Coursera, 2023</p><p>Natural Language Processing · NPTEL, 2022</p></div><div class="award mt-3"><strong>Smart India Hackathon 2023 winner</strong><br>App-based audiometer · Ranked top 1% nationwide in NPTEL Blockchain</div></div></div>
+    </div></div></section>
 
-  <!-- Footer -->
-  <footer class="text-center py-6 bg-slate-900 text-gray-400 text-sm">
-    ⭐ Thanks for visiting! Looking forward to impactful opportunities.
-  </footer>
+    <section class="contact-section section-space" id="contact"><div class="container contact-inner"><div class="row align-items-end gy-4"><div class="col-lg-8"><p class="hero-kicker mb-3">05 / Contact</p><h2 class="section-title mb-3">Have a thoughtful problem to solve?</h2><p class="mb-0">I’d love to hear what you’re working on.</p></div><div class="col-lg-4 d-flex flex-wrap gap-4 justify-content-lg-end"><a class="contact-link" href="mailto:mpreethivarsha@gmail.com">Email ↗</a><a class="contact-link" href="https://www.linkedin.com/in/preethi-varsha-marivina/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="contact-link" href="https://github.com/PreethiVarshaM" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></div></section>
+  </main>
+  <footer class="py-3"><div class="container d-flex justify-content-between flex-wrap gap-2"><span>© 2026 Preethi Varsha Marivina</span><span>Designed with care · Chennai, India</span></div></footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script>
-    const buttons = document.querySelectorAll(".collapsible");
-    const toggleAllBtn = document.getElementById("toggleAll");
-
-    buttons.forEach(button => {
-      button.addEventListener("click", () => {
-        const content = button.nextElementSibling;
-        content.classList.toggle("open");
-        const icon = button.querySelector("span");
-        icon.textContent = content.classList.contains("open") ? "–" : "+";
+    // Filter controls keep the project collection easy to explore.
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+    const filterStatus = document.getElementById('filterStatus');
+    filterButtons.forEach((button) => button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      let visibleCount = 0;
+      filterButtons.forEach((item) => {
+        const active = item === button;
+        item.classList.toggle('active', active);
+        item.setAttribute('aria-pressed', String(active));
       });
-    });
-
-    toggleAllBtn.addEventListener("click", () => {
-      const allOpen = [...document.querySelectorAll(".collapsible-content")]
-        .every(c => c.classList.contains("open"));
-      
-      document.querySelectorAll(".collapsible-content").forEach((c, i) => {
-        const icon = buttons[i].querySelector("span");
-        if (allOpen) {
-          c.classList.remove("open");
-          icon.textContent = "+";
-        } else {
-          c.classList.add("open");
-          icon.textContent = "–";
-        }
+      projectItems.forEach((item) => {
+        const visible = filter === 'all' || item.dataset.category === filter;
+        item.hidden = !visible;
+        if (visible) visibleCount += 1;
       });
-      
-      toggleAllBtn.textContent = allOpen ? "Expand All" : "Collapse All";
-    });
+      filterStatus.textContent = `Showing ${filter === 'all' ? 'all' : filter} ${visibleCount} ${visibleCount === 1 ? 'project' : 'projects'}`;
+    }));
+
+    // Reveal sections as they enter the viewport; content remains visible without JS.
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            currentObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add('is-visible'));
+    }
+
+    // Close the Bootstrap mobile menu after choosing a section.
+    document.querySelectorAll('#navContent .nav-link').forEach((link) => link.addEventListener('click', () => {
+      const menu = document.getElementById('navContent');
+      if (menu.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(menu).hide();
+    }));
   </script>
 </body>
 </html>
