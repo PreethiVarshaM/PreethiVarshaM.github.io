@@ -39,9 +39,11 @@
     .section-title { font:400 clamp(2.3rem,5vw,4rem)/1.08 Georgia,"Times New Roman",serif; letter-spacing:-.045em; }
     .section-lead { color:var(--muted); max-width:570px; }
     .stats-band { background:#eaf0fa; border-block:1px solid #dce5f3; }
-    .stat { padding:27px 0; }
-    .stat strong { display:block; font:400 2.1rem Georgia,serif; color:#244a88; }
-    .stat span { color:var(--muted); font-size:.72rem; }
+    .stat { padding:27px 16px; height:100%; }
+    .stat strong { display:block; font:400 clamp(1.8rem,3vw,2.45rem)/1.1 Georgia,serif; color:#244a88; letter-spacing:-.04em; }
+    .stat span { display:block; max-width:210px; margin:8px auto 0; color:var(--ink); font-size:.78rem; font-weight:650; line-height:1.4; }
+    .stat small { display:block; margin-top:5px; color:var(--muted); font-size:.68rem; line-height:1.4; }
+    .stat + .stat { border-left:1px solid #dce5f3; }
     .experience-accordion { --bs-accordion-bg:transparent; --bs-accordion-border-color:var(--line); --bs-accordion-btn-bg:transparent; --bs-accordion-active-bg:#edf2fb; --bs-accordion-active-color:var(--ink); --bs-accordion-btn-focus-box-shadow:none; }
     .accordion-button { padding:1.35rem 1.1rem; }
     .accordion-button:not(.collapsed) { box-shadow:none; }
@@ -78,6 +80,7 @@
     footer { background:#070d18; color:rgba(255,255,255,.48); font-size:.7rem; }
     .reveal { opacity:0; transform:translateY(20px); transition:opacity .65s ease,transform .65s ease; }
     .reveal.is-visible { opacity:1; transform:translateY(0); }
+    @media(max-width:991.98px) { .stat + .stat { border-left:0; }.stat:nth-child(even) { border-left:1px solid #dce5f3; }.stat:nth-child(n+3) { border-top:1px solid #dce5f3; } }
     @media(max-width:767.98px) { .hero{min-height:650px}.hero-content{padding-block:90px}.portrait-wrap{width:min(78%,300px);margin:30px auto 0}.portrait{height:350px}.portrait-caption{right:-12px}.section-space{padding-block:72px}.scroll-cue{display:none}.project-card .card-text{min-height:0} }
     @media(prefers-reduced-motion:reduce) { *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none} }
   </style>
@@ -117,10 +120,11 @@
       <a class="scroll-cue" href="#experience">SCROLL TO EXPLORE ↓</a>
     </section>
 
-    <section class="stats-band" aria-label="Career highlights"><div class="container"><div class="row text-center g-0">
-      <div class="col-4 stat"><strong>60%</strong><span>lower API latency on large financial datasets</span></div>
-      <div class="col-4 stat border-start border-end"><strong>400+</strong><span>security vulnerabilities remediated</span></div>
-      <div class="col-4 stat"><strong>3 apps</strong><span>migrated to Kubernetes for easier scaling</span></div>
+    <section class="stats-band py-2" aria-label="Selected engineering impact"><div class="container"><p class="section-kicker text-center mt-3 mb-0">Selected impact</p><div class="row text-center g-0">
+      <div class="col-6 col-lg-3 stat"><strong>60%</strong><span>lower API latency</span><small>Across data-heavy financial workflows</small></div>
+      <div class="col-6 col-lg-3 stat"><strong>~80%</strong><span>less manual operational effort</span><small>With a RAG-based automation platform</small></div>
+      <div class="col-6 col-lg-3 stat"><strong>99.9%</strong><span>less UI data transfer</span><small>On unchanged deployments through browser caching</small></div>
+      <div class="col-6 col-lg-3 stat"><strong>400+</strong><span>security vulnerabilities remediated</span><small>Across critical fintech applications</small></div>
     </div></div></section>
 
     <section class="section-space" id="experience"><div class="container">
